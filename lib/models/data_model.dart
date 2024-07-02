@@ -20,45 +20,45 @@ class DataModel {
     if (json['banners'] != null) {
       banners = <Banners>[];
       json['banners'].forEach((v) {
-        banners!.add(new Banners.fromJson(v));
+        banners!.add(Banners.fromJson(v));
       });
     }
     if (json['prescriptions'] != null) {
       prescriptions = <Prescriptions>[];
       json['prescriptions'].forEach((v) {
-        prescriptions!.add(new Prescriptions.fromJson(v));
+        prescriptions!.add(Prescriptions.fromJson(v));
       });
     }
     if (json['medicines'] != null) {
       medicines = <Medicines>[];
       json['medicines'].forEach((v) {
-        medicines!.add(new Medicines.fromJson(v));
+        medicines!.add(Medicines.fromJson(v));
       });
     }
     investigationReports = json['investigation_reports'] != null
-        ? new InvestigationReports.fromJson(json['investigation_reports'])
+        ? InvestigationReports.fromJson(json['investigation_reports'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> dataModelDataModel = new Map<String, dynamic>();
-    dataModelDataModel['status'] = this.status;
-    dataModelDataModel['message'] = this.message;
-    if (this.banners != null) {
+    final Map<String, dynamic> dataModelDataModel = <String, dynamic>{};
+    dataModelDataModel['status'] = status;
+    dataModelDataModel['message'] = message;
+    if (banners != null) {
       dataModelDataModel['banners'] =
-          this.banners!.map((v) => v.toJson()).toList();
+          banners!.map((v) => v.toJson()).toList();
     }
-    if (this.prescriptions != null) {
+    if (prescriptions != null) {
       dataModelDataModel['prescriptions'] =
-          this.prescriptions!.map((v) => v.toJson()).toList();
+          prescriptions!.map((v) => v.toJson()).toList();
     }
-    if (this.medicines != null) {
+    if (medicines != null) {
       dataModelDataModel['medicines'] =
-          this.medicines!.map((v) => v.toJson()).toList();
+          medicines!.map((v) => v.toJson()).toList();
     }
-    if (this.investigationReports != null) {
+    if (investigationReports != null) {
       dataModelDataModel['investigation_reports'] =
-          this.investigationReports!.toJson();
+          investigationReports!.toJson();
     }
     return dataModelDataModel;
   }
@@ -80,11 +80,11 @@ class Banners {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> dataModelDataModel = new Map<String, dynamic>();
-    dataModelDataModel['pk_no'] = this.pkNo;
-    dataModelDataModel['title'] = this.title;
-    dataModelDataModel['image'] = this.image;
-    dataModelDataModel['description'] = this.description;
+    final Map<String, dynamic> dataModelDataModel = <String, dynamic>{};
+    dataModelDataModel['pk_no'] = pkNo;
+    dataModelDataModel['title'] = title;
+    dataModelDataModel['image'] = image;
+    dataModelDataModel['description'] = description;
     return dataModelDataModel;
   }
 }
@@ -124,17 +124,17 @@ class Prescriptions {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> dataModelDataModel = new Map<String, dynamic>();
-    dataModelDataModel['prescription_no_pk'] = this.prescriptionNoPk;
-    dataModelDataModel['patient_no_fk'] = this.patientNoFk;
-    dataModelDataModel['patient_name'] = this.patientName;
-    dataModelDataModel['service_number'] = this.serviceNumber;
-    dataModelDataModel['patient_code'] = this.patientCode;
-    dataModelDataModel['prescription_date'] = this.prescriptionDate;
-    dataModelDataModel['pat_relation'] = this.patRelation;
-    dataModelDataModel['prescription_url'] = this.prescriptionUrl;
+    final Map<String, dynamic> dataModelDataModel = <String, dynamic>{};
+    dataModelDataModel['prescription_no_pk'] = prescriptionNoPk;
+    dataModelDataModel['patient_no_fk'] = patientNoFk;
+    dataModelDataModel['patient_name'] = patientName;
+    dataModelDataModel['service_number'] = serviceNumber;
+    dataModelDataModel['patient_code'] = patientCode;
+    dataModelDataModel['prescription_date'] = prescriptionDate;
+    dataModelDataModel['pat_relation'] = patRelation;
+    dataModelDataModel['prescription_url'] = prescriptionUrl;
     dataModelDataModel['prescription_download_url'] =
-        this.prescriptionDownloadUrl;
+        prescriptionDownloadUrl;
     return dataModelDataModel;
   }
 }
@@ -168,14 +168,14 @@ class Medicines {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> dataModelDataModel = new Map<String, dynamic>();
-    dataModelDataModel['prescription_med_no_pk'] = this.prescriptionMedNoPk;
-    dataModelDataModel['prescription_no_fk'] = this.prescriptionNoFk;
-    dataModelDataModel['item_no_fk'] = this.itemNoFk;
-    dataModelDataModel['item_name'] = this.itemName;
-    dataModelDataModel['dosage'] = this.dosage;
-    dataModelDataModel['duration'] = this.duration;
-    dataModelDataModel['instruction_take'] = this.instructionTake;
+    final Map<String, dynamic> dataModelDataModel = <String, dynamic>{};
+    dataModelDataModel['prescription_med_no_pk'] = prescriptionMedNoPk;
+    dataModelDataModel['prescription_no_fk'] = prescriptionNoFk;
+    dataModelDataModel['item_no_fk'] = itemNoFk;
+    dataModelDataModel['item_name'] = itemName;
+    dataModelDataModel['dosage'] = dosage;
+    dataModelDataModel['duration'] = duration;
+    dataModelDataModel['instruction_take'] = instructionTake;
     return dataModelDataModel;
   }
 }
@@ -190,16 +190,16 @@ class InvestigationReports {
     if (json['pathelogies'] != null) {
       pathelogies = <Pathelogies>[];
       json['pathelogies'].forEach((v) {
-        pathelogies!.add(new Pathelogies.fromJson(v));
+        pathelogies!.add(Pathelogies.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> dataModelDataModel = new Map<String, dynamic>();
-    if (this.pathelogies != null) {
+    final Map<String, dynamic> dataModelDataModel = <String, dynamic>{};
+    if (pathelogies != null) {
       dataModelDataModel['pathelogies'] =
-          this.pathelogies!.map((v) => v.toJson()).toList();
+          pathelogies!.map((v) => v.toJson()).toList();
     }
     return dataModelDataModel;
   }
@@ -252,20 +252,20 @@ class Pathelogies {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> dataModelDataModel = new Map<String, dynamic>();
-    dataModelDataModel['lab_no_pk'] = this.labNoPk;
-    dataModelDataModel['lab_code'] = this.labCode;
-    dataModelDataModel['item_name'] = this.itemName;
-    dataModelDataModel['patient_no_fk'] = this.patientNoFk;
-    dataModelDataModel['service_number'] = this.serviceNumber;
-    dataModelDataModel['url'] = this.url;
-    dataModelDataModel['report_no_fk'] = this.reportNoFk;
-    dataModelDataModel['au_entry_hospital_pk_no'] = this.auEntryHospitalPkNo;
-    dataModelDataModel['patient_name'] = this.patientName;
-    dataModelDataModel['patient_code'] = this.patientCode;
-    dataModelDataModel['dept'] = this.dept;
-    dataModelDataModel['report_url'] = this.reportUrl;
-    dataModelDataModel['report_url_download'] = this.reportUrlDownload;
+    final Map<String, dynamic> dataModelDataModel = <String, dynamic>{};
+    dataModelDataModel['lab_no_pk'] = labNoPk;
+    dataModelDataModel['lab_code'] = labCode;
+    dataModelDataModel['item_name'] = itemName;
+    dataModelDataModel['patient_no_fk'] = patientNoFk;
+    dataModelDataModel['service_number'] = serviceNumber;
+    dataModelDataModel['url'] = url;
+    dataModelDataModel['report_no_fk'] = reportNoFk;
+    dataModelDataModel['au_entry_hospital_pk_no'] = auEntryHospitalPkNo;
+    dataModelDataModel['patient_name'] = patientName;
+    dataModelDataModel['patient_code'] = patientCode;
+    dataModelDataModel['dept'] = dept;
+    dataModelDataModel['report_url'] = reportUrl;
+    dataModelDataModel['report_url_download'] = reportUrlDownload;
     return dataModelDataModel;
   }
 }
